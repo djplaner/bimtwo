@@ -1,0 +1,28 @@
+
+*Deadline*
+
+Intent is to have working version of bim2 up and going by
+31 Jan 2011.  Hopefully before then.
+
+*About*
+
+bim2 is an update of the BIM activity module for Moodle 1.9.x.
+It's being re-written to work with Moodle v2.0 and also to 
+make some imporvements.
+
+Source code available https://github.com/djplaner/bim2
+
+More information http://bit.ly/dGOsyu
+
+_About the name_
+
+As well as porting bim to Moodle 2.0, bim2 is also meant to 
+be a major re-design of bim.  Hence the desire to make a
+distinction between the two versions by change the name.
+
+bim2 is a sensible name, however, it doesn't work within
+Moodle where module names aren't supposed to contain digits
+like 2. 
+
+Current solution is to talk about bim2 but within Moodle
+the proper name will be bimtwo.
