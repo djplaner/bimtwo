@@ -44,8 +44,11 @@ $string['pluginname'] = 'bimtwo';
 
 // General settings
 $string['bimfieldset'] = 'BIM settings';
-$string['bimintro'] = 'About BIM activity';
-$string['bimname'] = 'Name of BIM activity';
+$string['intro'] = 'About BIM activity';
+$string['intro_help'] = 'Describes the purpose of this particular BIM activity and will be displayed to students when they register and view details about their blog/feed.';
+
+$string['name'] = 'Name of BIM activity';
+$string['name_help'] = '<p>This becomes the name users will click on from the course page to access the bim2 activity.</p>';
 
 $string['bim_submit'] = 'Submit';
 $string['bim_cancel'] = 'Cancel';
@@ -54,7 +57,11 @@ $string['bim_error_updating'] = 'Error updating database';
 
 // bim2 specific
 
-$string['bim_register_feed'] = 'Allow registration?';
-$string['bim_mirror_feed'] = 'Enable mirroring?';
-$string['bim_grade_feed'] = 'Enable grading?';
+$string['register_feed'] = 'Allow registration?';
+$string['register_feed_help'] = '<p>Typically students have to register a Web feed for their blog or other service before BIM can start doing anything useful.</p> <p>To allow them to register their feed, select this option.</p> <p>If you do not want students to register their feed, do not select it.</p>';
+$string['mirror_feed'] = 'Enable mirroring?';
+$string['mirror_feed_help'] = '<p>BIM creates a mirror of the feed for each student blog or resource. A mirror is a local up-to-date copy of the feed.</p> <p>While this option is selected the feeds registered for this course will be mirrored. De-select and the mirror process will cease.</p> <p>Typically the mirror process is only left on while the course is being offered.</p> <p>The mirror process is run once when the student first registers their feed. It is then run every hour on all student feeds to see if any changes have occured.</p>';
+
+$string['grade_feed'] = 'Enable grading?';
+$string['grade_feed_help'] = '<p>If this option is selected then a new field will appear in the gradebook for this course.  The name of the field will match the name of this BIM activity.</p> <p>When you release students\' marked posts the mark will appear in that field in the gradebook. The final result for each student in the gradebook will be the total of all the student\'s released posts added together.</p>';
 
