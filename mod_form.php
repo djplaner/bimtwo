@@ -42,25 +42,24 @@ class mod_bimtwo_mod_form extends moodleform_mod {
     /// Adding the "general" fieldset, where all the common settings are showed        $mform->addElement('header', 'general', get_string('general', 'form'));
 
     /// Adding the standard "name" field
-        $mform->addElement('text', 'name', get_string('bimname', 'bimtwo'), array('size'=>'64'));
+        $mform->addElement('text', 'name', get_string('name', 'bimtwo'), array('size'=>'64'));
         $mform->setType('name', PARAM_TEXT);
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength',
  255, 'client');
+        $mform->addHelpButton( 'name', 'form_name', 'bimtwo' ); 
 
     /// Adding the required "intro" field to hold the description of the instance
 /*        $editor_settings = array( 'canUseHtmlEditor'=>'detect',
                    'rows' => 20, 'cols' => 40, 'width' => 0,
                    'height' => 0, 'course' => 0 );
-        $mform->addElement('htmleditor', 'intro', get_string('bimintro', 'bimtwo'),
+        $mform->addElement('htmleditor', 'intro', get_string('intro', 'bimtwo'),
                           $editor_settings); 
         $mform->setType('intro', PARAM_RAW);
         $mform->addRule('intro', get_string('required'), 'required', null, 'clien
-t');
-        $mform->setHelpButton( 'intro',
-                               array( 'intro',
-                               get_string( 'bim_register_feed', 'bimtwo' ),
-                               'bimtwo' )); */
+t');*/
+        $this->add_intro_editor( true, get_string('intro','bimtwo'));
+        $mform->addHelpButton( 'intro', 'form_intro', 'bimtwo' );
 
     /// Adding "introformat" field
 //        $mform->addElement('format', 'introformat', get_string('format'));
@@ -71,19 +70,17 @@ t');
 
         $mform->addElement('header', 'bimfieldset', get_string('bimfieldset', 'bimtwo'));
         $mform->addElement('advcheckbox', 'register_feed',
-                    get_string('bim_register_feed', 'bimtwo'), '' );
+                    get_string('register_feed', 'bimtwo'), '' );
 //        $mform->addElement('advcheckbox', 'change_feed', 
  //                   get_string('change_feed', 'bimtwo'), '' ); 
         $mform->addElement('advcheckbox', 'mirror_feed',
-                    get_string('bim_mirror_feed', 'bimtwo'), '' );
+                    get_string('mirror_feed', 'bimtwo'), '' );
         $mform->addElement('advcheckbox', 'grade_feed',
-                    get_string('bim_grade_feed', 'bimtwo'), '' );
-        $mform->setHelpButton( 'register_feed', array( 'register_feed',
-                               get_string( 'bim_register_feed', 'bimtwo' ),                               'bimtwo' ));
-        $mform->setHelpButton( 'mirror_feed', array( 'mirror_feed', get_string( 'bim_mirror_feed', 'bimtwo' ), 'bimtwo' ));
-        $mform->setHelpButton( 'grade_feed', array( 'grade_feed', get_string( 'bim_grade_feed', 'bimtwo' ), 'bimtwo' ));
-//        $mform->setHelpButton( 'change_feed', array( 'change_feed', get_string(
-// 'change_feed', 'bimtwo' ), 'bimtwo' ));
+                    get_string('grade_feed', 'bimtwo'), '' );
+
+        $mform->addHelpButton( 'register_feed', 'form_register', 'bimtwo' );
+        $mform->addHelpButton( 'mirror_feed', 'form_mirror', 'bimtwo' );
+        $mform->addHelpButton( 'grade_feed','form_grade', 'bimtwo' );
 
 //-------------------------------------------------------------------------------
         // add standard elements, common to all modules
