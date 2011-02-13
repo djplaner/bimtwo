@@ -82,15 +82,22 @@ class bimtwo_coordinator_controller extends bimtwo_base_controller {
         $this->tabs[]=$rows;
     }
 
+    // Present a simple description of current configuration with
+    // some pointers
     function configure() {
         require_once "$this->view_path/coordinator/configure_view.php";
         $this->view = new configure_view( $this );
         $this->view->display();
 
-        print "<h1> Configure </h1>";
     }
 
+    // Present (and manage) a form that allows addition and modification
+    // of questions assigned for students to answer
     function manage_questions() {
+        require_once "$this->view_path/coordinator/manage_questions.php";
+        $this->model = new manage_questions( $this );
+        $this->model->gather_data();
+
         require_once "$this->view_path/coordinator/manage_questions_view.php";
         $this->view = new manage_questions_view( $this );
         $this->view->display();
